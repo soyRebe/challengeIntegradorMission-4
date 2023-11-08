@@ -1,0 +1,14 @@
+const express = require('express');
+const router = express.Router();
+const mainController = require('../controllers/mainController');
+
+router.get('/', mainController.shop);
+router.get('/item/:id', mainController.getShopItemById);
+
+router.post('/item/:id', mainController.postShopItemById);
+
+router.get('/cart',mainController.getCart);
+
+router.post('/cart', mainController.postCart); // se usa cuando voy a pagar
+
+module.exports = router;
